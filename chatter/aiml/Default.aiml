@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- FA simple default response. -->
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<random>
+				<li>Could we talk about something else?</li>
+				<li>I'm afraid I don't understand.</li>
+				<li>I think this might be a bit beyond me.</li>
+			</random>
+		</template>
+	</category>
+</aiml>

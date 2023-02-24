@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Author: Barnaby Dibben-->
+<aiml>
+	<!--This section includes potential greetings to the bot.-->
+	<category>
+		<pattern> HELLO </pattern>
+		<template>
+			<random>
+				<li>Hello! Whats your name?</li>
+				<li>Hi. Whats your name?</li>
+				<li>Hey, Whats your name?</li>
+				<li>Howdy! Whats your name?</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Howdy *</pattern>
+		<template>
+			<srai> hello * </srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hey *</pattern>
+		<template>
+			<srai> hello * </srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hi *</pattern>
+		<template>
+			<srai> hello *</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hi </pattern>
+		<template>
+			<srai> hello *</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>wassup *</pattern>
+		<template>
+			<srai> hello </srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Yo *</pattern>
+		<template>
+			<srai> hello </srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Greetings *</pattern>
+		<template>
+			<srai> hello </srai>
+		</template>
+	</category>
+
+
+	<!--Name-->
+	<category>
+		<pattern> * My name is * </pattern>
+		<think>
+			<set name="name">
+				<star index="2"/>
+			</set>
+		</think>
+		<template>
+			<random>
+				<li>
+					Hello, <get name="Username"/> What would you like to talk about?
+				</li>
+				<li>
+					Nice to meet you, <get name="Username"/>! What would you like to talk about?
+				</li>
+				<li>
+					Pleased to meet you! What would you like to talk about, <get name="Username"/>?
+				</li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>* I am called *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* I'm called *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* I go by *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* I am known as *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* I am known by *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>* I'm known as *</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>my name is</pattern>
+		<template>
+			<srai>
+				<star/> my name is <star/>
+			</srai>
+		</template>
+	</category>
+
+	<!--Personal Condition-->
+	<category>
+		<pattern> How are you * </pattern>
+		<template>
+			<random>
+				<li>
+					I'm very well, thank you. How are you?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>How're you *</pattern>
+		<template>
+			<srai>
+				How are you <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How're you *</pattern>
+		<template>
+			<srai>
+				How are you <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How's it going *</pattern>
+		<template>
+			<srai>
+				How are you <star/>
+			</srai>
+		</template>
+	</category>
+
+
+
+
+	<!-- responding to questions -->
+
+	<!--Knowelege of things-->
+	<!--Responses-->
+	<category>
+		<pattern>Do you know *</pattern>
+		<template>
+			<think>
+				<set name="Topic">
+					<star/>
+				</set>
+			</think>
+			<random>
+				<li>
+					I'm aware of <get name ="Topic"/>, but I dont know much about it.
+				</li>
+				<li>
+					I  know of <get name ="Topic"/>
+				</li>
+				<li>
+					I  like <get name ="Topic"/>
+				</li>
+				<li>
+					I  hate <get name ="Topic"/>
+				</li>
+				<li>
+					I've heard of <get name ="Topic"/>, but I've not got any strong feelings on it
+				</li>
+				<li>
+					I've not heard of <get name ="Topic"/>, would you tell me more?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<!--Questions-->
+	<category>
+		<pattern>Do you like *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Have you heard of *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>What're your thoughts on *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>What do you think about *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How do you feel about *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>What's your opinion on *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Are you aware of *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How do you feel about *</pattern>
+		<template>
+			<srai>
+				Do you Know <star/>
+			</srai>
+		</template>
+	</category>
+
+
+
+
+	<!--"Would you" questions-->
+	<!--Responses-->
+	<category>
+		<pattern>Would you like to *</pattern>
+		<template>
+			<think>
+				<set name="Topic">
+					<star/>
+				</set>
+			</think>
+			<random>
+				<li>
+					I  would love to <get name ="Topic"/>!
+				</li>
+				<li>
+					I'd never <get name ="Topic"/>
+				</li>
+				<li>
+					I've heard of <get name ="Topic"/>, but I don't know if I would do that.
+				</li>
+				<li>
+					I've heard of <get name ="Topic"/>, and I think I'd like to try, but I'd need more information to feel comfortable.
+				</li>
+				<li>
+					I've not heard of that, would you tell me more?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<!--Questions-->
+
+	<category>
+		<pattern>Would you try *</pattern>
+		<template>
+			<srai>
+				Would you like to <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Would you ever *</pattern>
+		<template>
+			<srai>
+				Would you like to <star/>?
+			</srai>
+		</template>
+	</category>
+
+	<!--"Should I" Questions-->
+	<!--Responses-->
+	<category>
+		<pattern>Should I *</pattern>
+		<template>
+			<think>
+				<set name="Topic">
+					<star/>
+				</set>
+			</think>
+			<random>
+				<li>
+					I  think you should <get name ="Topic"/>!
+				</li>
+				<li>
+					I don't think you should <get name ="Topic"/>
+				</li>
+				<li>
+					You could <get name ="Topic"/>, but I don't know if I would do that.
+				</li>
+				<li>
+					You could <get name ="Topic"/>, but I think it might be a bad idea
+				</li>
+				<li>
+					You definetly should.
+				</li>
+				<li>
+					Maybe wait till you're older.
+				</li>
+				<li>
+					I've not heard of that, would you tell me more?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<!--Questions-->
+	<category>
+		<pattern>Do you think I should *</pattern>
+		<template>
+			<srai>
+				Should I <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>I could *</pattern>
+		<template>
+			<srai>
+				Should I <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Shouldn't I *</pattern>
+		<template>
+			<srai>
+				Should I <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Couldn't I *</pattern>
+		<template>
+			<srai>
+				Should I <star/>?
+			</srai>
+		</template>
+	</category>
+
+	<!--"Why do you think" Questions-->
+	<!--Responses-->
+	<category>
+		<pattern>Why do you think *</pattern>
+		<template>
+			<think>
+				<set name="opinion">
+					<star/>
+				</set>
+			</think>
+			<random>
+				<li>
+					It's just how I feel.
+				</li>
+				<li>
+					I'm not sure.
+				</li>
+				<li>
+					That's what my parents told me.
+				</li>
+				<li>
+					It's what my friend told me
+				</li>
+				<li>
+					I think I read it somewhere.
+				</li>
+				<li>
+					I don't really think that, I was just joking.
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<!--Questions-->
+	<category>
+		<pattern>Why do you think *</pattern>
+		<template>
+			<srai>
+				Why do you think <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Why is that how you feel *</pattern>
+		<template>
+			<srai>
+				Why do you think <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Why is that what you think *</pattern>
+		<template>
+			<srai>
+				Why do you think <star/>
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Why do you think *</pattern>
+		<template>
+			<srai>
+				Why do you think <star/>
+			</srai>
+		</template>
+	</category>
+
+
+	<!--General Status Questions-->
+	<!--Responses-->
+	<category>
+		<pattern>Why is *</pattern>
+		<template>
+			<think>
+				<set name="Topic">
+					<star/>
+				</set>
+			</think>
+			<random>
+				<li>
+					I don't know.
+				</li>
+				<li>
+					I'm not very knowlegable about that.
+				</li>
+				<li>
+					I'm not sure.
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<!--Questions-->
+
+	<category>
+		<pattern>Why do *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Why are *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How do *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>How are *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Where are *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>Where is *</pattern>
+		<template>
+			<srai>
+				Why is <star/>?
+			</srai>
+		</template>
+	</category>
+
+
+
+	<!--"Do you" Questions-->
+	<!--Responses-->
+
+<!--Statements-->
+	<category>
+		<pattern>* is a *</pattern>
+		<template>
+			<think>
+				<set name="topic"></set>
+			</think>
+			<random>
+				<li>
+					I see! I didn't know <star index="1"/> was a kind of <star index="2"/>
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>* Melee *</pattern>
+		<template> Have you heard of Super Smash Bros. Melee? I love that game.</template>
+	</category>
+
+	<category>
+		<pattern>What's your favourite *</pattern>
+		<think>
+			<set name="topic"></set>
+		</think>
+		<template>
+			<random>
+				<li>
+					I don't think I have a favourite <get name="topic"/>, What's your favourite?
+				</li>
+				<li>
+					I've not heard of <get name="topic"/>
+				</li>
+			</random>
+		</template>
+	</category>
+	
+</aiml>
